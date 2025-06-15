@@ -1,41 +1,27 @@
 import { NextResponse } from "next/server"
-import { pinkSyncAPI } from "@/lib/pinksync-api"
+import { validateConfig } from "@/lib/config/auth-config"
 
 export async function GET() {
   try {
-    // Check PinkSync API health
-    const pinkSyncHealth = await pinkSyncAPI.healthCheck()
+    // Validate configuration
+    validateConfig()
 
-    // Check database connection (if applicable)
-    // const dbHealth = await checkDatabaseConnection()
-
-    const health = {
+    return NextResponse.json({
       status: "healthy",
+      service: "vcode.pinksync.io",
+      version: "v2.0.0",
       timestamp: new Date().toISOString(),
-      services: {
-        api: "healthy",
-        pinksync: pinkSyncHealth.status || "healthy",
-        database: "healthy", // dbHealth.status
-      },
-      version: "1.0.0",
-    }
-
-    return NextResponse.json(health)
+      environment: process.env.NODE_ENV || "development",
+    })
   } catch (error) {
-    console.error("Health check error:", error)
-
-    const health = {
-      status: "unhealthy",
-      timestamp: new Date().toISOString(),
-      services: {
-        api: "healthy",
-        pinksync: "unhealthy",
-        database: "unknown",
+    return NextResponse.json(
+      {
+        status: "unhealthy",
+        service: "vcode.pinksync.io",
+        error: error instanceof Error ? error.message : "Configuration error",
+        timestamp: new Date().toISOString(),
       },
-      error: error instanceof Error ? error.message : "Unknown error",
-      version: "1.0.0",
-    }
-
-    return NextResponse.json(health, { status: 503 })
+      { status: 500 },
+    )
   }
 }

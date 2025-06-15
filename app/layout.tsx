@@ -2,29 +2,37 @@ import type React from "react"
 import type { Metadata } from "next"
 import { Inter } from "next/font/google"
 import "./globals.css"
-import { ThemeProvider } from "@/components/theme-provider"
-import { Toaster } from "@/components/ui/toaster"
-import { AuthProvider } from "@/components/auth-provider"
 
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "PinkSync - Layer 1 Accessibility Transformer",
-  description: "The unified accessibility transformer that sits between deaf users and digital content",
-  keywords: ["accessibility", "deaf", "sign language", "ASL", "digital accessibility", "inclusive design"],
+  title: "vCode API - PinkSync",
+  description: "Video-Coded Accessibility Ledger API for sign language verification",
+  keywords: ["accessibility", "sign language", "ASL", "video verification", "deaf", "API"],
+  authors: [{ name: "PinkSync", url: "https://pinksync.io" }],
+  openGraph: {
+    title: "vCode API - PinkSync",
+    description: "Video-Coded Accessibility Ledger API for sign language verification",
+    url: "https://vcode.pinksync.io",
+    siteName: "vCode API",
+    type: "website",
+  },
+  robots: {
+    index: false, // API service, don't index
+    follow: false,
+  },
     generator: 'v0.dev'
 }
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode
+}) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en">
       <body className={inter.className}>
-        <ThemeProvider attribute="class" defaultTheme="light" enableSystem>
-          <AuthProvider>
-            {children}
-            <Toaster />
-          </AuthProvider>
-        </ThemeProvider>
+        <div className="min-h-screen bg-gradient-to-b from-pink-50 to-white">{children}</div>
       </body>
     </html>
   )

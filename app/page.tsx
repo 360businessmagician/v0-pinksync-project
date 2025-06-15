@@ -1,80 +1,121 @@
-import type { Metadata } from "next"
-import RegistrationForm from "@/components/registration-form"
-import { AccessibilityFeatures } from "@/components/accessibility-features"
-import { PinkSyncLogo } from "@/components/pink-sync-logo"
-import { LayerExplanation } from "@/components/layer-explanation"
-import { AccessibilityTransformer } from "@/components/accessibility-transformer"
-import { PinkSync } from "@/components/pink-sync"
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import { Badge } from "@/components/ui/badge"
+import { Button } from "@/components/ui/button"
+import { ExternalLink, FileText, Shield, Video } from "lucide-react"
 
-export const metadata: Metadata = {
-  title: "PinkSync Registration - Layer 1 Accessibility Transformer",
-  description:
-    "Register for PinkSync, the unified accessibility transformer for deaf users. One layer, one accessibility solution across all digital platforms.",
-  keywords: ["accessibility", "deaf", "sign language", "ASL", "digital accessibility", "inclusive design"],
-  openGraph: {
-    title: "PinkSync - One Layer. One Accessibility.",
-    description: "The unified accessibility transformer that sits between deaf users and digital content",
-    type: "website",
-  },
-}
-
-export default function Home() {
+export default function HomePage() {
   return (
-    <main className="min-h-screen bg-gradient-to-br from-pink-50 to-purple-50">
-      {/* Skip to main content for screen readers */}
-      <a
-        href="#main-content"
-        className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-pink-600 text-white px-4 py-2 rounded-md z-50"
-      >
-        Skip to main content
-      </a>
+    <div className="container mx-auto py-12 px-4">
+      <div className="max-w-4xl mx-auto">
+        <div className="text-center mb-12">
+          <h1 className="text-4xl font-bold text-pink-600 mb-4">vCode API</h1>
+          <p className="text-xl text-gray-600 mb-6">Video-Coded Accessibility Ledger</p>
+          <Badge variant="outline" className="text-sm">
+            v2.0.0 • vcode.pinksync.io
+          </Badge>
+        </div>
 
-      <div className="container mx-auto px-4 py-8">
-        <div className="max-w-6xl mx-auto space-y-12">
-          {/* Hero Section */}
-          <header className="text-center space-y-4" id="main-content">
-            <PinkSyncLogo className="mx-auto h-20 w-20" />
-            <h1 className="text-4xl md:text-5xl font-bold text-pink-600">PinkSync</h1>
-            <p className="text-xl md:text-2xl font-medium text-gray-700">One Layer. One Accessibility.</p>
-            <p className="text-base md:text-lg text-gray-600 max-w-2xl mx-auto">
-              The unified accessibility transformer that sits between deaf users and digital content
-            </p>
-          </header>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+          <Card>
+            <CardHeader>
+              <CardTitle className="flex items-center gap-2">
+                <Video className="h-5 w-5 text-blue-500" />
+                Sign Language Processing
+              </CardTitle>
+              <CardDescription>
+                Secure video capture and AI-powered transformation of sign language content
+              </CardDescription>
+            </CardHeader>
+            <CardContent>
+              <ul className="text-sm space-y-1">
+                <li>• ASL, BSL, and ISL support</li>
+                <li>• Real-time processing</li>
+                <li>• Structured data extraction</li>
+              </ul>
+            </CardContent>
+          </Card>
 
-          {/* Layer Visualization */}
-          <section aria-labelledby="layer-explanation">
-            <h2 id="layer-explanation" className="sr-only">
-              How PinkSync Works
-            </h2>
-            <LayerExplanation />
-          </section>
+          <Card>
+            <CardHeader>
+              <CardTitle className="flex items-center gap-2">
+                <Shield className="h-5 w-5 text-green-500" />
+                Auditable Verification
+              </CardTitle>
+              <CardDescription>
+                Complete audit trail with cryptographic verification of all interactions
+              </CardDescription>
+            </CardHeader>
+            <CardContent>
+              <ul className="text-sm space-y-1">
+                <li>• Immutable audit logs</li>
+                <li>• Error correction tracking</li>
+                <li>• Trust verification</li>
+              </ul>
+            </CardContent>
+          </Card>
 
-          {/* Registration and Features */}
-          <section className="grid grid-cols-1 lg:grid-cols-2 gap-8" aria-labelledby="registration-section">
-            <h2 id="registration-section" className="sr-only">
-              Registration and Features
-            </h2>
-            <AccessibilityFeatures />
-            <RegistrationForm />
-          </section>
+          <Card>
+            <CardHeader>
+              <CardTitle className="flex items-center gap-2">
+                <FileText className="h-5 w-5 text-purple-500" />
+                Document Integration
+              </CardTitle>
+              <CardDescription>Embed vCodes in documents for verifiable sign language consent</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <ul className="text-sm space-y-1">
+                <li>• PDF embedding</li>
+                <li>• QR code generation</li>
+                <li>• Legal compliance</li>
+              </ul>
+            </CardContent>
+          </Card>
 
-          {/* How It Works */}
-          <section aria-labelledby="how-it-works">
-            <h2 id="how-it-works" className="sr-only">
-              How PinkSync Transforms Accessibility
-            </h2>
-            <AccessibilityTransformer />
-          </section>
+          <Card>
+            <CardHeader>
+              <CardTitle className="flex items-center gap-2">
+                <ExternalLink className="h-5 w-5 text-orange-500" />
+                Partner Integration
+              </CardTitle>
+              <CardDescription>RESTful API designed for healthcare, legal, and financial partners</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <ul className="text-sm space-y-1">
+                <li>• JWT authentication</li>
+                <li>• Visual feedback system</li>
+                <li>• Comprehensive documentation</li>
+              </ul>
+            </CardContent>
+          </Card>
+        </div>
 
-          {/* API Documentation */}
-          <section aria-labelledby="api-docs">
-            <h2 id="api-docs" className="sr-only">
-              PinkSync API
-            </h2>
-            <PinkSync />
-          </section>
+        <div className="text-center space-y-4">
+          <h2 className="text-2xl font-semibold">Get Started</h2>
+          <p className="text-gray-600">Ready to integrate sign language accessibility into your application?</p>
+          <div className="flex justify-center gap-4">
+            <Button asChild>
+              <a href="https://developers.pinksync.io/vcode" target="_blank" rel="noopener noreferrer">
+                <FileText className="mr-2 h-4 w-4" />
+                API Documentation
+              </a>
+            </Button>
+            <Button variant="outline" asChild>
+              <a href="/api/health" target="_blank" rel="noopener noreferrer">
+                <Shield className="mr-2 h-4 w-4" />
+                Service Health
+              </a>
+            </Button>
+          </div>
+        </div>
+
+        <div className="mt-12 p-6 bg-pink-50 rounded-lg">
+          <h3 className="text-lg font-medium mb-2">One Layer, One Accessibility</h3>
+          <p className="text-gray-700">
+            The vCode API is part of the PinkSync Ecosystem, designed to ensure universal accessibility for Deaf
+            individuals across all digital platforms and services.
+          </p>
         </div>
       </div>
-    </main>
+    </div>
   )
 }
