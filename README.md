@@ -1,9 +1,9 @@
-# PinkSync
+# DeafAUTH
 
 *Automatically synced with your [v0.dev](https://v0.dev) deployments*
 
-[![Deployed on Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-black?style=for-the-badge&logo=vercel)](https://vercel.com/mbtq-microservices/v0-middleware-pink-sync)
-[![Built with v0](https://img.shields.io/badge/Built%20with-v0.dev-black?style=for-the-badge)](https://v0.dev/chat/projects/ZDWoa7Ng3Dx)
+[![Deployed on Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-black?style=for-the-badge&logo=vercel)](https://vercel.com/mbtquniverse/v0-server-setup)
+[![Built with v0](https://img.shields.io/badge/Built%20with-v0.dev-black?style=for-the-badge)](https://v0.dev/chat/projects/ILcyfRHMce6)
 
 ## Overview
 
@@ -14,13 +14,13 @@ Any changes you make to your deployed app will be automatically pushed to this r
 
 Your project is live at:
 
-**[https://vercel.com/mbtq-microservices/v0-middleware-pink-sync](https://vercel.com/mbtq-microservices/v0-middleware-pink-sync)**
+**[https://vercel.com/mbtquniverse/v0-server-setup](https://vercel.com/mbtquniverse/v0-server-setup)**
 
 ## Build your app
 
 Continue building your app on:
 
-**[https://v0.dev/chat/projects/ZDWoa7Ng3Dx](https://v0.dev/chat/projects/ZDWoa7Ng3Dx)**
+**[https://v0.dev/chat/projects/ILcyfRHMce6](https://v0.dev/chat/projects/ILcyfRHMce6)**
 
 ## How It Works
 
